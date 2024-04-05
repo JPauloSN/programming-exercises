@@ -1,35 +1,26 @@
+#funções pré-instaladas do Python
 from os import system
 
-#função para calcular fatorial
-def factorial(number):
-    if number == 0:
-        return 1; 
-    return number * factorial(number-1)
+#funções próprias
+from myModules.read import read
+from myModules.math import factorial
 
-#função para receber o input do usuário, considerando o caso de ValueError
-def readInteger(msg):
-    while True:
-        try:
-            number = int(input(msg))
-            return  number # O loop para se o valor for válido
-        except ValueError:
-            system("cls")
-            print(f"{'='*5}ERROR{'='*5}")
-            print("Valor inválido! Por favor, insira um número.")
-
+#main
 while True:
+    #limpa tela do terminal
     system("cls")
     
     print("\n\tBem-vindo! Esse programa calcula o fatorial de um número!")
-    number = readInteger("\nInforme o número que deseja calcular (para encerrar a execução digite 0):")
+    number = read("int", "Digite o número que deseja fatorar (Digite 0 para parar a execução): ")
     
+    #encerra o programa, caso satisfaça a condição
     if number==0:
         print("\nAgradecemos a preferência! Volte sempre :)")
         break
 
+    #imprime os resultados no terminal
     print(f"\n{'-'*10} RESULTADO {'-'*10}")
     print(f"\nO fatorial de {number}! é {factorial(number)}\n")
 
+    #interrompe a execução antes de reiniciar
     system("pause")
-
-
