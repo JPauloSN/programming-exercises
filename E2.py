@@ -10,7 +10,19 @@ def isNulo(num:float):
     else:
         return 1
 
-def eqsg(a:float, b:float, c:float):
-    return ((b**2)-((4 * a) * c)) 
+def eqSegundo(a:float, b:float, c:float):
+    delta = ((b**2)-((4 * a) * c))
 
-delta = print(eqsg(1, 6, 3))
+delta = eqSegundo(1, 6, 7)
+
+if isNulo(delta):
+    x = -b / (2 * a)
+
+elif isPositive(delta):
+    x1 = -b / (2 * a)
+    x1 = -b / (2 * a)
+     
+else:
+    x1 = -b / (2 * a)
+    x1 = -b / (2 * a)
+
